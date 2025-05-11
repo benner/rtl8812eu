@@ -1,5 +1,5 @@
 # rtl88x2eu-20230815
-Linux Driver for WiFi Adapters that are based on the RTL8812EU and RTL8822EU Chipsets, based on driver ```v5.15.0.1-197```
+Linux Driver for WiFi Adapters that are based on the RTL8812EU and RTL8822EU Chipsets, based on driver ```v5.15.0.1-249```
 
 This branch is mainly focused on FPV. Checkout [commit 690d429](https://github.com/libc0607/rtl88x2eu-20230815/commit/690d429ec272892d5388d744097e3c3cb15dad1b) for the original driver from Realtek.  
 
@@ -354,4 +354,3 @@ cat /proc/net/rtl88x2eu/<wlan0>/bf_monitor_trig
 ## Use with OpenIPC  
 The driver has been integrated into the default FPV firmware for SSC30KQ, SSC338Q, and SSC377DE since [this commit](https://github.com/OpenIPC/firmware/commit/64228b686002b2fd8fd2cbf722a1a6cb7aad9650).  
 For other platforms, see the tutorial [here in OpenIPC Wiki](https://github.com/OpenIPC/wiki/blob/master/en/fpv-bl-m8812eu2-wifi-adaptors.md).  
-Or, download pre-built firmware with this driver from [here](https://github.com/libc0607/openipc-firmware).  
