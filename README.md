@@ -5,7 +5,9 @@ Original driver tar: [rtl88x2EU_rtl88x2CU-VE_WiFi_linux_v5.15.0.1-249-g9245f8bd9
 This branch is mainly focused on FPV. PRs welcome.
 
 ## Hardware 
-BL-M8812EU2 datasheet: [BL-M8812EU2_datasheet_V1.0.1.1_240511.pdf](https://github.com/user-attachments/files/16627775/BL-M8812EU2_datasheet_V1.0.1.1_240511.pdf)  
+BL-M8812EU2 (by LB-LINK, size 32mm\*32mm): [BL-M8812EU2_datasheet_V1.0.1.1_240511.pdf](https://github.com/user-attachments/files/16627775/BL-M8812EU2_datasheet_V1.0.1.1_240511.pdf)  
+HP-H09-01 (by LB-LINK, size 27mm\*20mm): [HP-H09-01_datasheet_V0.1.0.pdf](https://github.com/user-attachments/files/24686880/HP-H09-01_datasheet_V0.1.0.pdf)  
+
 Or any adaptor based on RTL8812EU/RTL8822EU should be ok.  
 
 ## Known Issue
