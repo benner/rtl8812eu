@@ -85,8 +85,6 @@ s32	_rtw_init_xmit_priv(struct xmit_priv *pxmitpriv, _adapter *padapter)
 	sint	res = _SUCCESS;
 
 
-	pr_info("8812eu:  ----  _rtw_init_xmit_priv ------------");
-	pr_err("8812eu: _rtw_init_xmit_priv");
 	if (MaxTxBufLen>0)
 		pr_err("8812eu: Use max %d of %d Tx buffer slots before returning NETDEV_TX_BUSY ", MaxTxBufLen , NR_XMIT_EXTBUFF);
 
