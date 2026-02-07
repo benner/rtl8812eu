@@ -84,9 +84,9 @@ s32	_rtw_init_xmit_priv(struct xmit_priv *pxmitpriv, _adapter *padapter)
 	struct xmit_frame *pxframe;
 	sint	res = _SUCCESS;
 
-	if (MaxTxBufLen > NR_XMIT_EXTBUFF) {
-		MaxTxBufLen = NR_XMIT_EXTBUFF;
-		pr_err("8812eu: limit MaxTxBufLen to %d (range: 0 to NR_XMIT_EXTBUFF (%d))", MaxTxBufLen, NR_XMIT_EXTBUFF);
+	if (MaxTxBufLen > NR_XMIT_EXTBUFF-1) {
+		MaxTxBufLen = NR_XMIT_EXTBUFF-1;
+		pr_err("8812eu: limit MaxTxBufLen to range: 0 to %d", NR_XMIT_EXTBUFF-1);
 	}
         
 	if (MaxTxBufLen>0)
