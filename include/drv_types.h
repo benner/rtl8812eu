@@ -585,7 +585,7 @@ struct registry_priv {
 #if defined(CONFIG_CHANGE_DTIM_PERIOD) && defined(CONFIG_AP_MODE)
 	u8 dtim_period;
 #endif
-
+        int max_tx_buf_len;
 };
 
 /* For registry parameters */

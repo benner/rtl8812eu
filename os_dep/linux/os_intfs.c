@@ -1107,6 +1107,10 @@ uint rtw_dtim_period = 1;
 module_param(rtw_dtim_period, uint, 0644);
 #endif
 
+static int MaxTxBufLen = 0; /* default disabled */
+module_param(MaxTxBufLen, int, 0444);
+MODULE_PARM_DESC(MaxTxBufLen, "Max TX buffer size taken before returning NETDEV_TX_BUSY");
+
 #if CONFIG_TX_AC_LIFETIME
 static void rtw_regsty_load_tx_ac_lifetime(struct registry_priv *regsty)
 {
@@ -1706,6 +1710,14 @@ uint loadparam(_adapter *padapter)
 #if defined(CONFIG_CHANGE_DTIM_PERIOD) && defined(CONFIG_AP_MODE)
 	registry_par->dtim_period = rtw_dtim_period;
 #endif
+	if (MaxTxBufLen > NR_XMIT_EXTBUFF-1) {
+		MaxTxBufLen = NR_XMIT_EXTBUFF-1;
+		RTW_WARN("%s: limit MaxTxBufLen to range: 0 to %d\n", __func__, NR_XMIT_EXTBUFF-1);
+	}
+	if (MaxTxBufLen>0)
+		RTW_INFO("%s: Use max %d of %d Tx buffer slots before returning NETDEV_TX_BUSY ", __func__, MaxTxBufLen, NR_XMIT_EXTBUFF);
+	registry_par->max_tx_buf_len = MaxTxBufLen;
+
 	return status;
 }
 
