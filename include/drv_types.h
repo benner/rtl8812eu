@@ -586,6 +586,9 @@ struct registry_priv {
 	u8 dtim_period;
 #endif
         int max_tx_buf_len;
+#if defined(CONFIG_BEAMFORMING) || defined(CONFIG_BEAMFORMING_MONITOR)
+        u8 bf_ndpa_rty_cnt;
+#endif
 };
 
 /* For registry parameters */
