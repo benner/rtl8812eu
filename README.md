@@ -106,9 +106,6 @@ Some leakage (mirror?) can be observed in the 5MHz TX, and I have no idea how to
 But 5MHz RX seems working. Weird...  
 If you need 5MHz BW on the 5.8GHz band, check [8812cu](https://github.com/libc0607/rtl88x2cu-20230728)/[8731bu](https://github.com/libc0607/rtl8733bu-20230626)/[ath9k](https://github.com/openwrt/openwrt/blob/main/package/kernel/mac80211/patches/ath9k/512-ath9k_channelbw_debugfs.patch).  
 
-##### Note about Changing TX Power in Narrowband Modes
-Changing TX power by ```iw``` will not work when injecting with 10MHz BW.  
-You should manually set BW back to 20MHz, set TX power, then set BW back again.  
 
 #### 20/40/80MHz Injection
 Use ```iw``` to set channel & NOHT/HT20/HT40/80MHz bandwidth, then set the correct bandwidth in the radiotap header (can be done by using ```-B``` in wfb-ng)   
