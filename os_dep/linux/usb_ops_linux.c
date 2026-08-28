@@ -771,7 +771,7 @@ void usb_recv_tasklet(unsigned long priv)
 	}
 }
 
-void usb_read_port_complete(struct urb *purb, struct pt_regs *regs)
+void usb_read_port_complete(struct urb *purb)
 {
 	struct recv_buf	*precvbuf = (struct recv_buf *)purb->context;
 	_adapter			*padapter = (_adapter *)precvbuf->adapter;
@@ -966,7 +966,7 @@ void usb_recv_tasklet(unsigned long priv)
 	}
 }
 
-void usb_read_port_complete(struct urb *purb, struct pt_regs *regs)
+void usb_read_port_complete(struct urb *purb)
 {
 	struct recv_buf	*precvbuf = (struct recv_buf *)purb->context;
 	_adapter			*padapter = (_adapter *)precvbuf->adapter;

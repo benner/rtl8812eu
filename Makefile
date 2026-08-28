@@ -2610,6 +2610,13 @@ EXTRA_CFLAGS += -Wno-missing-prototypes -Wno-header-guard -Wno-missing-declarati
 asflags-y += $(EXTRA_AFLAGS)
 ccflags-y += $(EXTRA_CFLAGS)
 cppflags-y += $(EXTRA_CPPFLAGS)
+
+# Built into vmlinux this driver's global symbols collide with the sibling
+# Realtek drivers it shares a vendor codebase with. Prefix them all. Modules
+# get their own symbol namespace, so leave those builds alone.
+ifeq ($(CONFIG_RTL8822EU), y)
+ccflags-y += -include $(src)/rtw_eu_namespace.h
+endif
 ldflags-y += $(EXTRA_LDFLAGS)
 
 
