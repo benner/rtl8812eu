@@ -1,6 +1,11 @@
 config RTL8822EU
 	tristate "Realtek 8822E USB WiFi"
-	depends on USB
+	depends on USB && CFG80211
 	help
-	  Help message of RTL8822EU
+	  Driver for Realtek RTL8812EU and RTL8822EU USB wireless adapters.
 
+	  The driver talks to cfg80211 directly rather than through
+	  mac80211, so CFG80211 must be built in when this is built in.
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called 8812eu.
